@@ -30,7 +30,7 @@ import pathlib
 
 class ConfigArgParser(ap.ArgumentParser):
 
-    def __init__(self,cfg_file:str='',*args,cfgArgs=(,), cfgKwArgs={},_argParseSection:str="ARGPARSE",_positionalIdentifier='__',_splitChar="\\",_specialTypes=None,**kwargs):
+    def __init__(self,cfg_file:str='',*args,cfgArgs=(), cfgKwArgs={},_argParseSection:str="ARGPARSE",_positionalIdentifier='__',_splitChar="\\",_specialTypes=None,**kwargs):
         self.cfg=cp.ConfigParser(*cfgArgs,**cfgKwArgs)
         self.cfg.optionxform=lambda x:x #case sensitive
         cfg_file=pathlib.Path(cfg_file)
